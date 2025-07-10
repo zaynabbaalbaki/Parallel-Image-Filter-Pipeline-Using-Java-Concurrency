@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the CSV
+df = pd.read_csv("benchmark.csv")
+
+# Calculate speedup and efficiency
+T1 = df['time_ms'][0]
+df['speedup'] = T1 / df['time_ms']
+df['efficiency'] = df['speedup'] / df['threads'] * 100
+
+# Plot Speed-up
+plt.figure(figsize=(10, 5))
+plt.plot(df['threads'], df['speedup'], marker='o', label='Speed-up')
+plt.plot(df['threads'], df['efficiency']/100, marker='s', linestyle='--', label='Efficiency (%) / 100')
+plt.title("Speed-up and Efficiency vs Thread Count")
+plt.xlabel("Threads")
+plt.ylabel("Speed-up / Efficiency")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
