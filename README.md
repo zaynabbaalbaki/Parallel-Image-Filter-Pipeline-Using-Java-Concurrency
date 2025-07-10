@@ -21,12 +21,6 @@ A Java Swing application for applying image filters using both **sequential** an
 
 ---
 
-## 🖼️ Example
-
-<img src="C:\Users\User\Downloads\Screenshot 2025-06-09 153831.png" width="1000"/>
-
----
-
 ## 📂 Project Structure
 ImageFilterProject/
 ├── src/
